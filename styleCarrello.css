@@ -1,0 +1,16 @@
+#main-carrello{
+    display: flex;
+    justify-content: center;
+}
+#main-contatti{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    border-bottom: 1px solid black;
+    border-radius: 25%;
+    padding: 20px;
+}

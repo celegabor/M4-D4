@@ -76,19 +76,19 @@ body{
 
 /* -------main------- */
 
-#main{
+#main, #aggiunteCarrello{
     display: flex;
     flex-wrap: wrap;
 
 }
 
-#main .card{
+#main .card, #aggiunteCarrello .card{
     height: 300px;
     width: 200px;
     margin: 10px;
     padding: 10px;
 }
-#main .card img{
+#main .card img, #aggiunteCarrello .card img{
     height: 200px;
     width: auto;
     object-fit: contain;

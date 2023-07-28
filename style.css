@@ -11,9 +11,25 @@ body{
 
 .bg-custom{
     background-color: rgb(255, 219, 172) !important;
-    
 }
 
+.d-none{
+    display: none;
+}
+
+/* card */
+
+.card{
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover{
+    transition: all 0.2s linear;
+    scale: 1.05;
+}
+
+/* ------section carrello------ */
 
 #carrello{
     position: fixed;
@@ -30,6 +46,7 @@ body{
     justify-content: center;
     text-decoration: none;
     color: black;
+    z-index: 1;
 }
 
 #carrello:hover{
@@ -38,6 +55,94 @@ body{
     color:  rgb(239, 184, 112);
     background-color: black;
     border: 4px solid  rgb(239, 184, 112);
+}
+
+#sectionContainCarrello{
+    background-color: black;
+    position: fixed;
+    height: 60px;
+    width: 60px;
+    bottom: 50px;
+    right: 50px;
+    border-radius: 50%;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: scroll;
+    margin-top: 20%;
+}
+
+#divPushCarrelloResult{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 3%;
+}
+
+#divPushCarrelloResult .card{
+    height: 120px;
+    width: 45%;
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 5px;
+}
+
+#risultatiRicerca{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#risultatiRicerca .card{
+    height: 380px;
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    overflow: scroll;
+}
+
+#divPushCarrelloResult .card img{
+    height: 100%;
+    width: 20%;
+    object-fit: contain;
+}
+
+#containerCarrello:hover #sectionContainCarrello{
+    width: 80vw;
+    height: 80vh;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 20px;
+    border: 10px solid black;
+    transition: all 0.2s linear;
+    display: flex;
+}
+
+#totaleCarrello{
+    color: rgb(239, 184, 112);
+    border-bottom: 2px solid rgb(239, 184, 112);
+    border-radius: 20%;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+#divPushCarrelloResult > .card > .fa-xmark{
+    display: none !important;
+}
+
+#carrello i{
+    margin-left: 20px;
+}
+
+#numeroCarrello{
+    position: relative;
+    top: -25px;
+    right: -5px;
 }
 
 /* -------header------- */
@@ -76,20 +181,60 @@ body{
 
 /* -------main------- */
 
-#main, #aggiunteCarrello{
+#main{
     display: flex;
     flex-wrap: wrap;
-
+    justify-content: center;
 }
 
-#main .card, #aggiunteCarrello .card{
-    height: 300px;
+#main .card{
+    height: 380px;
     width: 200px;
     margin: 10px;
     padding: 10px;
+    overflow: scroll;
 }
-#main .card img, #aggiunteCarrello .card img{
+#main .card img{
     height: 200px;
     width: auto;
     object-fit: contain;
 }
+
+.customCarrello{
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+
+.customCarrello:hover{
+    scale: 1.2;
+    color: rgb(239, 184, 112);
+}
+
+.customTogliCarrello{
+    color: rgba(255, 3, 3, 0.4);
+    position: absolute;
+    bottom: 20px;
+    right: 45px;
+    scale: 0.9;
+}
+
+.customTogliCarrello:hover{
+    scale: 1.2;
+    color: rgba(255, 3, 3);
+}
+
+.customTogliCard{
+    color: rgba(255, 3, 3, 0.4);
+    position: absolute;
+    top: 20px;
+    right: 5px;
+    scale: 0.9;
+}
+
+.customTogliCard:hover{
+    scale: 1.2;
+    color: rgba(255, 3, 3);
+}
+
+

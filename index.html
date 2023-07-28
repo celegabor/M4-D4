@@ -56,23 +56,55 @@
                     <a class="nav-link disabled" aria-disabled="true">Disabled</a>
                   </li> -->
                 </ul>
-                <form class="d-flex" role="search">
+                <!-- <form class="d-flex" role="search">
                   <input class="border-search bg-custom form-control me-2" type="search" placeholder="Search" aria-label="Search">
                   <button class="btn bg-success text-white btn-outline-success" type="submit">Search</button>
-                </form>
+                </form> -->
+                <form class="d-flex" role="search" onsubmit="cercaLibri(event)">
+                  <input class="border-search bg-custom form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
+                  <button class="btn bg-success text-white btn-outline-success" type="submit">Search</button>
+              </form>
               </div>
             </div>
           </nav>
     </header>
 
+    <!-- -----main----- -->
+
     <main id="main">
        
     </main>
-    <h3>sezione carrello</h3>
-    <section id="aggiunteCarrello"></section>
-    <a href="http://127.0.0.1:5500/carrello.html" id="carrello">
-        <i onclick="carrello()" class="fa-solid fa-cart-arrow-down fa-2xl"></i>
-    </a>
+
+<!-- ----sezione carrello---- -->
+    <section>
+      <!-- icona carrello in basso a dx -->
+      <div id="containerCarrello">
+        <a href="#" id="carrello">
+          <i onclick="carrello()" class="fa-solid fa-cart-arrow-down fa-2xl"></i>
+          <span class="badge bg-danger" id="numeroCarrello">0</span>
+        </a>
+        <div id="sectionContainCarrello">
+
+          <div id="totaleCarrello">
+
+            <h2>IL TUO CARRELLO</h2>
+            
+            <div id="testoNumeroRisultati"></div>
+            <div id="testoPrezzoTotale"></div>
+          </div>
+          <div id="divPushCarrelloResult"></div>
+
+        </div>
+      </div>
+        
+      
+    </section>
+
+    <footer>
+      <h2>risultati search</h2>
+      <div id="risultatiRicerca"></div>
+    </footer>
+
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>

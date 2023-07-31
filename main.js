@@ -83,13 +83,14 @@ function aggiungiAlCarrello(imageUrl, price, title) {
         price,
         title
     };
+    
     carrelloAggiunte.push(cardData);
+
     console.log('Card aggiunta al carrello:', cardData);
+
     totaleCarrello(carrelloAggiunte);
-    console.log(carrelloAggiunte);
     stampaDatiCarrello();
     aggiornaBadgeCarrello();
-
 }
 
 function togliDalCarrello(imageUrl, price, title) {
@@ -99,10 +100,10 @@ function togliDalCarrello(imageUrl, price, title) {
             carrelloAggiunte.splice(i, 1);
             console.log('Card rimossa dal carrello:', imageUrl, price, title);
 
-            totaleCarrello(carrelloAggiunte);
             break;
         }
     }
+    totaleCarrello(carrelloAggiunte);
     stampaDatiCarrello();
     aggiornaBadgeCarrello();
 
@@ -116,7 +117,6 @@ function totaleCarrello(carrelloItems) {
     cardElements.forEach(card => sectionContainCarrello.appendChild(card));
     stampaDatiCarrello();
     aggiornaBadgeCarrello();
-
 }
 
 function stampaDatiCarrello() {
@@ -124,9 +124,8 @@ function stampaDatiCarrello() {
     const testoNumeroRisultati = document.getElementById('testoNumeroRisultati');
     const testoPrezzoTotale = document.getElementById('testoPrezzoTotale');
 
-
     const lunghezzaCarrello = carrelloAggiunte.length;
-    console.log('Lunghezza del carrello:', lunghezzaCarrello);
+
     testoNumeroRisultati.innerText = 'Il numero totale di articoli nel tuo carrello è: ' + lunghezzaCarrello;
 
     const totalePrezzi = carrelloAggiunte.reduce((total, item) => total + item.price, 0);
@@ -139,24 +138,22 @@ function cercaLibri(event) {
     event.preventDefault(); // Evita il comportamento predefinito del form
 
     const searchInput = document.getElementById('searchInput');
-    const searchText = searchInput.value.toLowerCase(); // Recupera il testo di ricerca e lo converte in minuscolo
+    const searchText = searchInput.value.toLowerCase(); 
 
     const mainContainer = document.getElementById('main');
     const cards = mainContainer.getElementsByClassName('card');
 
-    const risultatiRicerca = []; // Array per memorizzare le card corrispondenti alla ricerca
+    const risultatiRicerca = [];
 
     for (const card of cards) {
         const titleElement = card.querySelector('span');
-        const titleText = titleElement.innerText.toLowerCase(); // Converte il testo del titolo in minuscolo
+        const titleText = titleElement.innerText.toLowerCase(); 
 
-        // Puoi aggiungere altre condizioni di ricerca qui, se necessario
         if (titleText.includes(searchText)) {
-            risultatiRicerca.push(card); // Aggiunge la card corrispondente ai risultati della ricerca
+            risultatiRicerca.push(card); // 
         }
     }
 
-    // Mostra i risultati della ricerca
     mostraRisultatiRicerca(risultatiRicerca);
 }
 
@@ -177,7 +174,7 @@ function aggiornaBadgeCarrello() {
     const numeroCarrello = document.getElementById('numeroCarrello');
     const lunghezzaCarrello = carrelloAggiunte.length;
     numeroCarrello.innerText = lunghezzaCarrello;
+    console.log('carrello aggiunte: ', carrelloAggiunte);
 }
-
 
 sito();

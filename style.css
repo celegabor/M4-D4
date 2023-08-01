@@ -264,6 +264,19 @@ body{
     color: rgba(255, 3, 3);
 }
 
+.customInfo{
+    color: rgba(60, 60, 211, 0.377);
+    position: absolute;
+    bottom: 20px;
+    right: 85px;
+    scale: 0.9;
+}
+
+.customInfo:hover{
+    scale: 1.2;
+    color: blue;
+}
+
 
 
 @media screen and (max-width: 1200px ) {

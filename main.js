@@ -33,6 +33,15 @@ function createCard(imageUrl, price, title) {
         cardToRemove.remove();
     });
 
+    // tasto info
+
+    const info = document.createElement('i');
+    info.classList.add('fa-solid', 
+    'fa-circle-info', 'fa-2xl', 'customInfo');
+    info.addEventListener('click', function() {
+        goToInfo(imageUrl, price, title);
+    });
+
     // tasto togli dal carrello
     const togliCarrello = document.createElement('i');
     togliCarrello.classList.add('fa-solid', 
@@ -55,11 +64,10 @@ function createCard(imageUrl, price, title) {
     card.appendChild(carrello);
     card.appendChild(togliCarrello); 
     card.appendChild(togliCard); 
+    card.appendChild(info); 
 
     return card;
 }
-
-
 
 function sito() {
     fetch(apiKey)
@@ -176,5 +184,16 @@ function aggiornaBadgeCarrello() {
     numeroCarrello.innerText = lunghezzaCarrello;
     console.log('carrello aggiunte: ', carrelloAggiunte);
 }
+
+function goToInfo(imageUrl, price, title) {
+    const params = new URLSearchParams();
+    params.append("imageUrl", imageUrl);
+    params.append("price", price);
+    params.append("title", title);
+
+    const url = "dettagli.html?" + params.toString();
+    window.location.href = url;
+}
+
 
 sito();

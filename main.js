@@ -34,7 +34,6 @@ function createCard(imageUrl, price, title) {
     });
 
     // tasto info
-
     const info = document.createElement('i');
     info.classList.add('fa-solid', 
     'fa-circle-info', 'fa-2xl', 'customInfo');

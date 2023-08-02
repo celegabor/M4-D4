@@ -215,27 +215,34 @@ body{
 }
 
 #main .card{
-    height: 380px;
-    width: 200px;
+    height: 400px;
+    width: 230px;
     margin: 10px;
     padding: 10px;
     overflow: scroll;
+    background-color: rgba(176, 78, 87, 0.40);
+    color: antiquewhite;
 }
 #main .card img{
     height: 200px;
     width: auto;
     object-fit: contain;
 }
+#main .card img:hover{
+    scale: 1.05;
+}
 
 .customCarrello{
     position: absolute;
     bottom: 20px;
     right: 10px;
+    color: rgba(0, 128, 0, 0.40);
 }
 
 .customCarrello:hover{
-    scale: 1.2;
-    color: rgb(239, 184, 112);
+    transition: all 0.2s linear;
+    scale: 1.25;
+    color:green;
 }
 
 .customTogliCarrello{
@@ -247,6 +254,7 @@ body{
 }
 
 .customTogliCarrello:hover{
+    transition: all 0.2s linear;
     scale: 1.2;
     color: rgba(255, 3, 3);
 }
@@ -260,6 +268,7 @@ body{
 }
 
 .customTogliCard:hover{
+    transition: all 0.2s linear;
     scale: 1.2;
     color: rgba(255, 3, 3);
 }
@@ -273,6 +282,7 @@ body{
 }
 
 .customInfo:hover{
+    transition: all 0.2s linear;
     scale: 1.2;
     color: blue;
 }

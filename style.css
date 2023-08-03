@@ -147,6 +147,30 @@ body{
     padding: 20px;
     width: 100%;
     text-align: center;
+    position: relative;
+}
+
+#svuotaCarrello{
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    height: 15px;
+    width: 40px;
+}
+#svuotaCarrello:hover{
+    color: red;
+    scale: 1.15;
+}
+#svuotaCarrello:hover #testoSvuotaCarrello{
+    right: 10px;
+}
+
+#testoSvuotaCarrello{
+    position: absolute;
+    top: 25px;
+    right: -110px;
+    color: white;
+    z-index: 11;
 }
 
 #divPushCarrelloResult > .card > .fa-xmark{
@@ -170,6 +194,15 @@ body{
 }
 #divPushCarrelloResult .card{
     background-color: rgb(163, 137, 137);
+}
+
+.scrittaHaiSvuotatoIlCarrello{
+    font-size: large;
+    color: white;
+    width: 100%;
+    border-bottom: 2px solid red;
+    border-radius: 10px;
+    margin-top: 20%;
 }
 
 /* -------header------- */
@@ -229,14 +262,18 @@ body{
     object-fit: contain;
 }
 #main .card img:hover{
-    scale: 1.05;
+    width: 90%;
+    object-fit: cover;
+    top: 0;
 }
 
 .customCarrello{
     position: absolute;
-    bottom: 20px;
     right: 10px;
     color: rgba(0, 128, 0, 0.40);
+    bottom: -12px;
+    height: 30px;
+    width: 30px;
 }
 
 .customCarrello:hover{
@@ -248,9 +285,11 @@ body{
 .customTogliCarrello{
     color: rgba(255, 3, 3, 0.4);
     position: absolute;
-    bottom: 20px;
+    bottom: -10px;
     right: 45px;
     scale: 0.9;
+    height: 30px;
+    width: 30px;
 }
 
 .customTogliCarrello:hover{
@@ -265,6 +304,8 @@ body{
     top: 20px;
     right: 5px;
     scale: 0.9;
+    height: 30px;
+    width: 30px;
 }
 
 .customTogliCard:hover{
@@ -276,9 +317,11 @@ body{
 .customInfo{
     color: rgba(60, 60, 211, 0.377);
     position: absolute;
-    bottom: 20px;
+    bottom: -10px;
     right: 85px;
     scale: 0.9;
+    height: 30px;
+    width: 30px;
 }
 
 .customInfo:hover{
@@ -287,11 +330,12 @@ body{
     color: blue;
 }
 
-
-
 @media screen and (max-width: 1200px ) {
     #divPushCarrelloResult .card span {
         font-size: 0.8em;
+    }
+    #divPushCarrelloResult .card .fa-solid:first-of-type {
+        scale: 1;
     }
     #divPushCarrelloResult .card .fa-solid {
         scale: 0.9;
@@ -305,12 +349,28 @@ body{
     #divPushCarrelloResult .card .fa-solid {
         scale: 0.7;
     }
+    #divPushCarrelloResult .card i:first-of-type{
+        bottom: -13px;
+        right: 5px;
+        scale: 0.85;
+    }
+    #divPushCarrelloResult .card i:nth-child(5){
+        bottom: -10px;
+        right: 35px;
+    }
+    #divPushCarrelloResult .card i:last-of-type{
+        bottom: -10px;
+        right: 65px;
+    }
 }
 
 @media screen and (max-width: 850px ) {
     #divPushCarrelloResult .card {
         width: 80%;
         height: 80%;
+    }
+    #divPushCarrelloResult .card .fa-solid:first-of-type {
+        scale: 0.7;
     }
     #divPushCarrelloResult .card .fa-solid {
         scale: 0.6;
@@ -344,6 +404,22 @@ body{
     
     #testoPrezzoTotale{
         top: 40%;
+    }
+}
+@media screen and (max-width: 400px ) {
+
+    #divPushCarrelloResult .card i:first-of-type{
+        bottom: -12px;
+        right: 5px;
+        scale: 0.7;
+    }
+    #divPushCarrelloResult .card i:nth-child(5){
+        bottom: -10px;
+        right: 25px;
+    }
+    #divPushCarrelloResult .card i:last-of-type{
+        bottom: -10px;
+        right: 47px;
     }
 }
 @media screen and (max-width: 350px ) {

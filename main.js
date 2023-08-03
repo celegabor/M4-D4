@@ -66,7 +66,7 @@ function createCard(imageUrl, price, title) {
     card.appendChild(info); 
 
     return card;
-}
+};
 
 function sito() {
     fetch(apiKey)
@@ -84,6 +84,11 @@ function sito() {
 }
 
 function aggiungiAlCarrello(imageUrl, price, title) {
+
+    const sectionContainCarrello = document.getElementById('divPushCarrelloResult');
+    sectionContainCarrello.innerHTML = 'Hai svuotato il carrello!';
+    sectionContainCarrello.classList.remove('scrittaHaiSvuotatoIlCarrello')
+
     const displayCarrello = document.getElementById('aggiunteCarrello');
     const cardData = {
         imageUrl,
@@ -193,6 +198,23 @@ function goToInfo(imageUrl, price, title) {
     const url = "dettagli.html?" + params.toString();
     window.location.href = url;
 }
+
+// tasto svuota carrello
+const svuotaCarrello = document.getElementById('svuotaCarrello');
+
+svuotaCarrello.addEventListener('click', function() {
+    // Svuoto l'array delle aggiunte nel carrello
+    carrelloAggiunte = [];
+
+    // Aggiorno la visualizzazione del carrello
+    totaleCarrello(carrelloAggiunte);
+    aggiornaBadgeCarrello();
+
+    const sectionContainCarrello = document.getElementById('divPushCarrelloResult');
+    sectionContainCarrello.innerHTML = 'Hai svuotato il carrello!';
+    sectionContainCarrello.classList.add('scrittaHaiSvuotatoIlCarrello')
+});
+
 
 
 sito();
